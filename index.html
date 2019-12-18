@@ -4,64 +4,49 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Wheater API</title>
-        <meta name="description" content="">
+        <meta name="description" content="weather">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/screen.css">
+        <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     </head>
-    <body>
-        <div class="o-container c-card">
-            <div class="c-card__body">
-                <h1 class="c-card__title">Best Weather Forecast</h1>
-                <div class="o-grid">
-                    <section class="o-section__a">
-                        <div class="o-img-container">
-                            <img class="c-img"id="headimg">
-                            <label class="c-label c-label__img" id="lblimg"></label>
-                        </div>
-                        <div>
-                            <label class="c-label" id="lblcity"></label>
-                            <label class="c-label" id="lbltempmain"></label>
+    <body class="o-container">
+        <div class="o-grid">
+                    <section class="o-section__a o-section--option">
+                        <div class="c-app__sidebar">
+                            <div class="">
+                                <div class="o-img-container">
+                                    <div class="c-weather-svg"> </div>
+                                </div>
+                            </div>
+                            <div class="o-row">
+                                <label class="c-label c-label__main" id="lblcity"></label>
+                            </div>
+                            <div class="o-row">
+                                <label class="c-label c-app__sidebar-item" id="lbltempmain"></label>
+                                <label class="c-label c-app__sidebar-item" id="lblimg"></label>
+                            </div>
                         </div>
                     </section>
                     <section class="o-section__b">
-                        <div class="o-nav">
+                        <div class="o-row">
                             <ul class="o-list">
-                                <li class="c-list__item" onclick="setborder(1)">
-                                    <label class="c-label " id="main">main</label>
+                                <li class="c-list__item" onclick="setborder(1), getmaindata('info')">
+                                    <label class="c-label" id="main">Main</label>
                                 </li>
-                                <li class="c-list__item" onclick="setborder(2)">
-                                    <label class="c-label " id="3h">3 hour</label>
-                                </li>
-                                <li class="c-list__item" onclick="setborder(3)">
-                                    <label class="c-label " id="5d">5 day</label>
+                                <li class="c-list__item" onclick="setborder(2), getdayforecast('hour')">
+                                    <label class="c-label" id="3h">3 Hour</label>
                                 </li>
                             </ul>
                             <div class="o-slider">
                                 <div class="o-slider__left" id="slider"></div>
                             </div>
                         </div>
-                        <div class="o-icon-container">
-                            <div class="o-icon-box">
-                                <label class="c-label c-label__icon" id="lbltemp"></label>
-                                <img class="c-img c-img__icon" src="./img/thermometer.svg">
-                            </div>
-                            <div class="o-icon-box">
-                                <label class="c-label c-label__icon" id="lblhumidity"></label>
-                                <img class="c-img c-img__icon" src="./img/humidity.svg">
-                            </div>
-                            <div class="o-icon-box">
-                                <label class="c-label c-label__icon" id="lblclouds"></label>
-                                <img class="c-img c-img__icon" src="./img/clouds.svg">
-                            </div>
-                            <div class="o-icon-box">
-                                <label class="c-label c-label__icon" id="lblwindspeed"></label>
-                                <img class="c-img c-img__icon" src="./img/wind.svg">
-                            </div>
+                        <div class="o-icon-container" id="navcontainer">
                         </div>
                     </section>
-                </div>
-            </div>
         </div>
+        <script src="./js/infoboxvalue.js" async defer></script>
         <script src="./js/script.js" async defer></script>
     </body>
 </html>
